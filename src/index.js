@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Welcome from './Welcome';
+import Post from "./Post"
 import reportWebVitals from './reportWebVitals';
+import reactDom from 'react-dom';
+
+const post = {
+  title : "Hey Title",
+  author : "Erik Yang",
+  body : `This is the body of body of React`,
+}
+
+ReactDOM.render(
+  <Post 
+  title={post.title} 
+  author={post.author}
+  body={post.body}
+  input={post.input}
+  />,
+  document.getElementById('ro'),
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* additiona help to spot error in dev mode */}
+    <Welcome name={"Erik"} 
+    location={"Irvine"}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
